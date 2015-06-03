@@ -1,0 +1,7 @@
+COMPONENT=MoteViewAppC
+BUILD_EXTRA_DEPS=MoteViewMsg.class
+MoteViewMsg.class: MoteViewMsg.java
+	javac MoteViewMsg.java
+MoteViewMsg.java:
+	mig  java  -target=null  -java-classname=MoteViewMsg MoteView.h MoteViewMsg  -o  $@
+include $(MAKERULES)
